@@ -1,11 +1,54 @@
 package org.example;
 import SuportClasses.DiceCup;
+import gui_fields.*;
 import gui_main.GUI;
 
 import java.awt.*;
 
 public class GUIController {
-private GUI gui = new GUI();
+    GUI_Field[] fields = {
+            new GUI_Start(),
+
+            new GUI_Street(),
+            new GUI_Street(),
+
+            new GUI_Chance(),
+
+            new GUI_Street(),
+            new GUI_Street(),
+
+            new GUI_Jail(),
+
+            new GUI_Street(),
+            new GUI_Street(),
+
+            new GUI_Chance(),
+
+            new GUI_Street(),
+            new GUI_Street(),
+
+            new GUI_Refuge(),
+
+            new GUI_Street(),
+            new GUI_Street(),
+
+            new GUI_Chance(),
+
+            new GUI_Street(),
+            new GUI_Street(),
+
+            new GUI_Jail(),
+
+            new GUI_Street(),
+            new GUI_Street(),
+
+            new GUI_Chance(),
+
+            new GUI_Street(),
+            new GUI_Street(),
+    };
+    private GUI gui = new GUI(fields);
+
  /*   public void GUIFelt(String title, String SubTitle, int index, Color color ) {
         gui.getFields()[index].setTitle(title);
         gui.getFields()[index].setSubText(SubTitle);
