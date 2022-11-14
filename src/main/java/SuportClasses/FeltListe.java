@@ -10,11 +10,11 @@ public class FeltListe {
 
 
     public void initializeFeltListe() {
-        this.feltListe = new int[] {250,-100,100,-20,180,0,-70,60,-80,-50,650};
+        this.feltListe = new int[] {2,1,1,0,1,1,0,2,2,0,2,2,0,3,3,0,3,3,0,4,4,0,5,5};
     }
 
     public void setFeltListeIndex(int index, int værdi) {
-        if(index>12||index<2) {
+        if(index>24||index<1) {
             System.out.println("index er uden for feltListe");
         }else {
             this.feltListe[index-2] = værdi;
@@ -23,7 +23,7 @@ public class FeltListe {
     }
 
     public int getFeltListeIndex(int index) {
-        if(index>12||index<2) {
+        if(index>24||index<1) {
             System.out.println("index er uden for feltListe");
             return 0;
         }else {
@@ -34,7 +34,7 @@ public class FeltListe {
     public String toString() {
         String string = "Værdier i feltListe: "+feltListe[0];
 
-        for(int i=1; i<11; i++) {
+        for(int i=0; i<23; i++) {
             string = string+", "+feltListe[i];
         }
 
