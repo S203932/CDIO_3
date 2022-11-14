@@ -183,5 +183,14 @@ public class GUIController {
    }
 
 
+    public int showMessage() {
+        GUI gui = new GUI();
+        gui.showMessage("Vælger antale af spiller ");
+        int numberInput;
+        String input;
+        // Indlæser et tal mellem 2 og 4
+        numberInput = gui.getUserInteger("Indtast et tal mellem 2 og 4", 2, 4);
+        return showMessage();
 
+    }
 }
