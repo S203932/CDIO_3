@@ -6,5 +6,6 @@ public class Main {
             GUIController guiController= new GUIController();
             guiController.GUIDice();
             guiController.GUIController();
+            guiController.showMessage();
         }
     }
