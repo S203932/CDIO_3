@@ -1,51 +1,25 @@
 package org.example;
 import SuportClasses.DiceCup;
+import SuportClasses.Spiller;
 import gui_fields.*;
 import gui_main.GUI;
 
 import java.awt.*;
 
 public class GUIController {
+private     DiceCup dice = new DiceCup(1);
+    Spiller playerOne = new Spiller();
+    Spiller playerTwo = new Spiller();
+    Spiller playerThree = new Spiller();
+    Spiller playerFour = new Spiller();
     GUI_Field[] fields = {
-            new GUI_Start(),
+            new GUI_Start(), new GUI_Street(), new GUI_Street(), new GUI_Chance(), new GUI_Street(), new GUI_Street(),
 
-            new GUI_Street(),
-            new GUI_Street(),
+            new GUI_Jail(), new GUI_Street(), new GUI_Street(), new GUI_Chance(), new GUI_Street(), new GUI_Street(),
 
-            new GUI_Chance(),
+            new GUI_Refuge(), new GUI_Street(), new GUI_Street(), new GUI_Chance(), new GUI_Street(), new GUI_Street(),
 
-            new GUI_Street(),
-            new GUI_Street(),
-
-            new GUI_Jail(),
-
-            new GUI_Street(),
-            new GUI_Street(),
-
-            new GUI_Chance(),
-
-            new GUI_Street(),
-            new GUI_Street(),
-
-            new GUI_Refuge(),
-
-            new GUI_Street(),
-            new GUI_Street(),
-
-            new GUI_Chance(),
-
-            new GUI_Street(),
-            new GUI_Street(),
-
-            new GUI_Jail(),
-
-            new GUI_Street(),
-            new GUI_Street(),
-
-            new GUI_Chance(),
-
-            new GUI_Street(),
-            new GUI_Street(),
+            new GUI_Jail(), new GUI_Street(), new GUI_Street(), new GUI_Chance(), new GUI_Street(), new GUI_Street(),
     };
     private GUI gui = new GUI(fields);
 
@@ -56,6 +30,12 @@ public class GUIController {
     }
     GUIFelt ("START", "Modtager 2$, når du passerer", 0, new Color(255, 255, 255)){     }
 */
+ public void GUIPlayer(){
+     GUI_Player player = new GUI_Player("KUKU", 2000);
+     gui.addPlayer(player);
+     GUI_Field field = gui.getFields()[dice.result()];
+     player.getCar().setPosition(field);
+ }
     public void GUIController() {
         gui.getFields()[0].setTitle("START");
         gui.getFields()[0].setSubText("Modtager 2$, når du passerer");
@@ -151,46 +131,33 @@ public class GUIController {
 
 
     }
-    /*
-
-        fields[i++] = new GUI_Refuge("default", "Helle", "Helle", "Ta' en pause", Color.WHITE, Color.BLACK);
-
-        fields[i++] = new GUI_Street("Spillehallen", "Pris:  3", "Spillehallen", "Leje:  3", new Color(232, 9, 9), Color.BLACK);
-        fields[i++] = new GUI_Street("Biografen", "Pris:  3", "Biografen", "Leje:  3", new Color(232, 9, 9), Color.BLACK);
-
-        fields[i++] = new GUI_Chance("?", "Prøv lykken", "Ta' et chancekort.", new Color(204, 204, 204), Color.BLACK);
-
-        fields[i++] = new GUI_Street("Legetøjsbutikken", "Pris:  3", "Legetøjsbutikken", "Leje:  3", new Color(255, 255, 50), Color.BLACK);
-        fields[i++] = new GUI_Street("Dyrhandlen", "Pris:  3", "Dyrhandlen", "Leje:  3", new Color(255, 255, 50), Color.BLACK);
-
-        fields[i++] = new GUI_Jail("default", "Gå i fængsel", "Gå i fængsel", "De fængsles\nSlå to ens for at komme ud", new Color(125, 125, 125), Color.BLACK);
-
-        fields[i++] = new GUI_Street("Bowling", "Pris:  4", "Bowling", "Leje:  4", new Color(7, 89, 8), Color.BLACK);
-        fields[i++] = new GUI_Street("Zoologisk have", "Pris:  4", "Zoologisk have", "Leje:  4", new Color(7, 89, 8), Color.BLACK);
-
-        fields[i++] = new GUI_Chance("?", "Prøv lykken", "Ta' et chancekort.", new Color(204, 204, 204), Color.BLACK);
-
-        fields[i++] = new GUI_Street("Vandlandet", "Pris:  5", "Vandlandet", "Leje:  5", new Color(12, 33, 147), Color.WHITE);
-        fields[i++] = new GUI_Street("Strandpromenaden", "Pris:  5", "Strandpromenaden", "Leje:  5", new Color(12, 33, 147), Color.WHITE);
-
-    }*/
 
    public void GUIDice(){
-
-        DiceCup dice = new DiceCup(1);
         dice.rollDice();
         gui.setDie(dice.result());
    }
 
-
-    public int showMessage() {
-        GUI gui = new GUI();
+    public int show() {
         gui.showMessage("Vælger antale af spiller ");
         int numberInput;
-        String input;
-        // Indlæser et tal mellem 2 og 4
+        //Indlæser et tal mellem 2 og 4
         numberInput = gui.getUserInteger("Indtast et tal mellem 2 og 4", 2, 4);
-        return showMessage();
+       return numberInput;
+    }
+    public void showMessage1() {
+        gui.showMessage("Indtast spillerens navn");
+            String playerOneName = gui.getUserString("playerOne:");
+            playerOne.setSpillerName(playerOneName);
+            String playerTwoName = gui.getUserString("playerTwo:");
+            playerTwo.setSpillerName(playerTwoName);
+            String playerThreeName = gui.getUserString("player3:");
+            playerThree.setSpillerName(playerThreeName);
+            String playerFourName = gui.getUserString("player3:");
+            playerFour.setSpillerName(playerThreeName);
+            System.out.println( playerTwo);
+
+
+
 
     }
 }
