@@ -1,5 +1,7 @@
 package ChanceCardsAndDeck;
 
+import java.awt.*;
+
 public class ChanceCards {
     private int type;
     private String description;
@@ -7,12 +9,23 @@ public class ChanceCards {
     private int moveUpTo;
     private int transaction;
 
+    private Color color;
+
     public ChanceCards(){
         initilalizeType();
         initilalizeDescription();
         initilalizeMoveTo();
         initilalizeMoveUpTo();
         initilalizeTransaction();
+        setColor(Color.BLACK);
+    }
+
+    public void setColor(Color color){
+        this.color = color;
+    }
+
+    public Color getColor(){
+        return color;
     }
 
     public void initilalizeType(){
