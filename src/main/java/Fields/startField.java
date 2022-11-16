@@ -1,4 +1,4 @@
-package field;
+package Fields;
 
 public class startField {
    private int position;
