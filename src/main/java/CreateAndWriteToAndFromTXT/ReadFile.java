@@ -15,12 +15,12 @@ public class ReadFile {
             FileReader fileReader = new FileReader(fileName);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String string =bufferedReader.readLine();
-            int counter = 0;
+
             while(string != null){
                 System.out.println(string);
                 stringArrayList.add(string);
                 string = bufferedReader.readLine();
-                counter++;
+
             }
             bufferedReader.close();
             fileReader.close();
