@@ -146,13 +146,13 @@ private     DiceCup dice = new DiceCup(1);
     public void showMessage1() {
         gui.showMessage("Indtast spillerens navn");
             String playerOneName = gui.getUserString("playerOne:");
-            playerOne.setSpillerName(playerOneName);
+            playerOne.setPlayerName(playerOneName);
             String playerTwoName = gui.getUserString("playerTwo:");
-            playerTwo.setSpillerName(playerTwoName);
+            playerTwo.setPlayerName(playerTwoName);
             String playerThreeName = gui.getUserString("player3:");
-            playerThree.setSpillerName(playerThreeName);
+            playerThree.setPlayerName(playerThreeName);
             String playerFourName = gui.getUserString("player3:");
-            playerFour.setSpillerName(playerThreeName);
+            playerFour.setPlayerName(playerThreeName);
             System.out.println( playerTwo);
 
 

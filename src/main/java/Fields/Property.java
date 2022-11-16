@@ -3,8 +3,7 @@ import SupportClasses.Player;
 
 
 public class Property extends Field {
-
-// Constructor der opstiller en property       
+    //
 
     private int value;
     private boolean availability;
