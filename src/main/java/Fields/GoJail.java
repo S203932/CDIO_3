@@ -1,6 +1,8 @@
 package Fields;
 
-public class GoJail {
+import SupportClasses.Player;
+
+public class GoJail extends Field{
     private int position;
     private String name;
     private int moveTo;
@@ -35,4 +37,8 @@ public class GoJail {
         this.moveTo = moveTo;
     }
 
+    public void GoToJail(Player player){
+        player.setPosition(6);
+        player.getAccount().subtractionAccount(2);
+    }
 }

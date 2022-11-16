@@ -1,6 +1,6 @@
 package Fields;
 
-public class StartField {
+public class StartField extends Field{
    private int position;
      private  String name;
     private int TRANSACTIONVALUE = 2;
