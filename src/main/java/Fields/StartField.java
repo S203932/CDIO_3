@@ -6,7 +6,7 @@ public class StartField {
     private int TRANSACTIONVALUE = 2;
 
     public StartField() {
-        setPosition(1);
+        setPosition(0);
         setName("Start");
         setTRANSACTIONVALUE(2);
 

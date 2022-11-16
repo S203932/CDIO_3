@@ -6,9 +6,9 @@ public class GoJail {
     private int moveTo;
 
     public GoJail() {
-        setPosition(19);
+        setPosition(18);
         setName("Gå i fængsel");
-        setMoveTo(7);
+        setMoveTo(6);
     }
 
     public int getPosition() {
