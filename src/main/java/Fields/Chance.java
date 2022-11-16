@@ -2,7 +2,7 @@ package Fields;
 
 import ChanceCardsAndDeck.CardDeck;
 
-public class Chance {
+public class Chance extends Field {
     private String name;
     private int position;
     private CardDeck  cardDeck;
