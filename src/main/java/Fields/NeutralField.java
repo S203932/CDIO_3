@@ -1,4 +1,6 @@
-package org.example;
+package Fields;
+
+import Fields.Field;
 
 public class NeutralField extends Field {
 
