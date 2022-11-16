@@ -1,6 +1,6 @@
 package org.example;
-import SuportClasses.DiceCup;
-import SuportClasses.Spiller;
+import SupportClasses.DiceCup;
+import SupportClasses.Player;
 import gui_fields.*;
 import gui_main.GUI;
 
@@ -8,10 +8,10 @@ import java.awt.*;
 
 public class GUIController {
 private     DiceCup dice = new DiceCup(1);
-    Spiller playerOne = new Spiller();
-    Spiller playerTwo = new Spiller();
-    Spiller playerThree = new Spiller();
-    Spiller playerFour = new Spiller();
+    Player playerOne = new Player();
+    Player playerTwo = new Player();
+    Player playerThree = new Player();
+    Player playerFour = new Player();
     GUI_Field[] fields = {
             new GUI_Start(), new GUI_Street(), new GUI_Street(), new GUI_Chance(), new GUI_Street(), new GUI_Street(),
 

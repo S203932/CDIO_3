@@ -1,4 +1,4 @@
-package SuportClasses;
+package SupportClasses;
 
 public class FeltListe {
     private int[] feltListe;

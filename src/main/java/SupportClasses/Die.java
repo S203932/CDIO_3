@@ -1,4 +1,4 @@
-package SuportClasses;
+package SupportClasses;
 
 public class Die {
     private int face;

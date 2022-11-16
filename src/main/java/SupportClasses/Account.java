@@ -1,25 +1,25 @@
-package SuportClasses;
+package SupportClasses;
 
-public class Konto {
+public class Account {
     private int pengebeholdning;
 
-    public Konto() {
-        initializeKonto();
+    public Account() {
+        initializeAccount();
 
     }
 
-    public Boolean initializeKonto() {
+    public Boolean initializeAccount() {
         this.pengebeholdning = 1000;
         return true;
     }
 
-    public Boolean setKonto(int pengebeholdning) {
+    public Boolean setAccount(int pengebeholdning) {
         this.pengebeholdning = pengebeholdning;
         return true;
     }
 
 
-    public Boolean subtractionKonto(int subtractValue) {
+    public Boolean subtractionAccount(int subtractValue) {
         this.pengebeholdning = pengebeholdning - subtractValue;
         if(this.pengebeholdning<0) {
             this.pengebeholdning = 0;
@@ -28,7 +28,7 @@ public class Konto {
     }
 
 
-    public Boolean additionKonto(int additionValue) {
+    public Boolean additionAccount(int additionValue) {
         this.pengebeholdning = pengebeholdning + additionValue;
         if(this.pengebeholdning<0) {
             this.pengebeholdning = 0;
