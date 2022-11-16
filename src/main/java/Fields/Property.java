@@ -1,6 +1,8 @@
 package Fields;
 import SupportClasses.Player;
 
+import java.awt.*;
+
 
 public class Property extends Field {
     //
@@ -8,11 +10,13 @@ public class Property extends Field {
     private int value;
     private boolean availability;
     private int type;
+    private Color color;
 
     public Property() {
         setValue(0);
         setAvailability(false);
         setType(-1);
+        setColor(Color.black);
 
     }
 
@@ -26,6 +30,14 @@ public class Property extends Field {
 
     public void setType(int type) {
         this.type = type;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public Color getColor(){
+        return this.color;
     }
 
     public int getValue() {
