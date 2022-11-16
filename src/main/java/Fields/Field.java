@@ -1,12 +1,17 @@
 package Fields;
 
+import java.awt.*;
+
 public class Field {
     private int position;
     private String name;
 
+    private Color color;
+
     public Field(){
         setName("Noname");
         setPosition(-1);
+        setColor(Color.black);
     }
 
     public void setName(String name) {
@@ -15,6 +20,14 @@ public class Field {
 
     public void setPosition(int position) {
         this.position = position;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public Color getColor(){
+        return this.color;
     }
 
     public String setName() {

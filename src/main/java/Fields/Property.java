@@ -10,7 +10,7 @@ public class Property extends Field {
     private int value;
     private boolean availability;
     private int type;
-    private Color color;
+
 
     public Property() {
         setValue(0);
@@ -30,14 +30,6 @@ public class Property extends Field {
 
     public void setType(int type) {
         this.type = type;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
-    }
-
-    public Color getColor(){
-        return this.color;
     }
 
     public int getValue() {

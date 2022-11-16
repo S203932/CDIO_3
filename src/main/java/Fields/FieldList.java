@@ -18,7 +18,7 @@ public class FieldList {
     public void setupField(){
         fieldList[0] = new StartField();
         ((StartField)fieldList[0]).setName("START");
-       // ((StartField)fieldList[0]).setColor(Color.LIGHT_GRAY);
+        ((StartField)fieldList[0]).setColor(Color.LIGHT_GRAY);
 
         fieldList[1] = new Property();
         ((Property)fieldList[1]).setName("BURGERBAREN");
@@ -32,6 +32,6 @@ public class FieldList {
 
         fieldList[3] = new Chance();
         ((Chance)fieldList[0]).setName("START");
-       // ((Chance)fieldList[0]).setColor(Color.LIGHT_GRAY);
+       ((Chance)fieldList[0]).setColor(Color.LIGHT_GRAY);
     }
 }
