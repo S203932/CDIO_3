@@ -1,11 +1,11 @@
 package Fields;
 
-public class startField {
+public class StartField {
    private int position;
      private  String name;
     private int TRANSACTIONVALUE = 2;
 
-    public startField() {
+    public StartField() {
         setPosition(1);
         setName("Start");
         setTRANSACTIONVALUE(2);
