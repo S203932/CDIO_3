@@ -1,8 +1,12 @@
 package SupportClasses;
 
+import Fields.Property;
+
 public class Player {
     private String name;
     private Account account;
+
+    private Property[] property;
 
     private int position;
 
@@ -39,4 +43,19 @@ public class Player {
     public String getPlayerName() {
         return name;
     }
+
+    public Property[] getProperty() {
+        return property;
+    }
+
+    public void setProperty(Property[] property) {
+        this.property = property;
+    }
+
+
+
+
+
+
+
 }
