@@ -11,13 +11,14 @@ public class Property extends Field {
     private boolean availability;
     private int type;
 
+    private Player player;
 
     public Property() {
         setValue(0);
         setAvailability(false);
         setType(-1);
         setColor(Color.black);
-
+        setPlayer(setName();
     }
 
     public void setValue(int value) {
@@ -44,8 +45,12 @@ public class Property extends Field {
         return this.type;
     }
 
-    public void buyProperty(Player player, Property property){
-        property.setAvailability(false);
-        player.getAccount().subtractionAccount(property.getValue());
+    public void buyProperty(Player player){
+        this.availability = false;
+        player.getAccount().subtractionAccount(this.value);
+    }
+    public void PayRentProperty(Player player, Property property){
+            player.getAccount().subtractionAccount(this.value);
+            player.setAccount().additionAccount(this.value);
     }
 }
