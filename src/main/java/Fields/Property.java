@@ -1,6 +1,5 @@
 package Fields;
 import SupportClasses.Player;
-
 import java.awt.*;
 
 
@@ -18,7 +17,7 @@ public class Property extends Field {
         setAvailability(false);
         setType(-1);
         setColor(Color.black);
-        setPlayer(setName();
+        setPlayer(player);
     }
 
     public void setValue(int value) {
@@ -33,6 +32,10 @@ public class Property extends Field {
         this.type = type;
     }
 
+    public void setPlayer(Player player){
+        this.player = player;
+    }
+
     public int getValue() {
         return this.value;
     }
@@ -45,12 +48,17 @@ public class Property extends Field {
         return this.type;
     }
 
+    public Player getPlayer() {
+        return this.player;
+    }
+
     public void buyProperty(Player player){
         this.availability = false;
         player.getAccount().subtractionAccount(this.value);
+        this.player = player;
     }
-    public void PayRentProperty(Player player, Property property){
+    public void PayRentProperty(Player player){
             player.getAccount().subtractionAccount(this.value);
-            player.setAccount().additionAccount(this.value);
+            this.player.getAccount().additionKonto(this.value);
     }
 }
