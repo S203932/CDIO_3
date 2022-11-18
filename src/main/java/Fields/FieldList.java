@@ -6,7 +6,7 @@ public class FieldList {
 
     private Field[] fieldList;
 
-    // constructor der indeholdder array
+    // constructor der indeholder array
     public FieldList() {
         InitializeFieldList();
     }
@@ -31,7 +31,11 @@ public class FieldList {
         ((Property)fieldList[2]).setColor(Color.ORANGE);
 
         fieldList[3] = new Chance();
-        ((Chance)fieldList[0]).setName("START");
-       ((Chance)fieldList[0]).setColor(Color.LIGHT_GRAY);
+        ((Chance)fieldList[3]).setName("Chance");
+    }
+
+    public Field getFieldIndex(int index){
+        return fieldList[index];
+
     }
 }

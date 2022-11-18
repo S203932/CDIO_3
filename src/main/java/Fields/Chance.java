@@ -1,6 +1,6 @@
 package Fields;
 
-import ChanceCardsAndDeck.CardDeck;
+import ChanceCardsAndDeck.*;
 
 public class Chance extends Field {
     private String name;
