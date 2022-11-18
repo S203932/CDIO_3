@@ -14,6 +14,7 @@ public class Player {
         setPlayerName("Player one");
         startAccount();
         setPosition(-1);
+        setProperty();
     }
 
     public int getPosition() {
