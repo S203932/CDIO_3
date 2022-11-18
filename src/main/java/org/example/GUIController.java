@@ -137,12 +137,14 @@ private     DiceCup dice = new DiceCup(1);
         gui.setDie(dice.result());
    }
 
-    public void show() {
+    public int show() {
         gui.showMessage("Vælger antale af spiller ");
         int numberInput;
         //Indlæser et tal mellem 2 og 4
         numberInput = gui.getUserInteger("Indtast et tal mellem 2 og 4", 2, 4);
+        return numberInput;
     }
+
     public void showMessage1() {
         gui.showMessage("Indtast spillerens navn");
             String playerOneName = gui.getUserString("playerOne:");
