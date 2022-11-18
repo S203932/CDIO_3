@@ -17,7 +17,10 @@ public class Player {
     }
 
     public void setPosition(int position) {
-        this.position = position;
+        int oldPosition = this.position;
+        if(position<oldPosition){
+            this.account.additionKonto(2);
+        }
     }
 
     public void setPlayerName(String navn) {
@@ -27,6 +30,7 @@ public class Player {
     public void startAccount() {
         this.account = new Account();
     }
+
 
     public Account getAccount() {
         return account;

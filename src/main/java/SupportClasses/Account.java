@@ -27,6 +27,13 @@ public class Account {
 
     }
 
+    public void additionKonto(int additionValue) {
+        this.pengebeholdning = pengebeholdning + additionValue;
+        if(this.pengebeholdning<0) {
+            this.pengebeholdning = 0;
+        }
+
+    }
 
     public Boolean transactionAccount(int transactionValue) {
         this.pengebeholdning = pengebeholdning + transactionValue;
