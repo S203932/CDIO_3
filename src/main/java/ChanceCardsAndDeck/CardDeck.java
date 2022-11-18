@@ -4,13 +4,16 @@ import java.util.Arrays;
 
 public class CardDeck {
     private ChanceCards[] card;
+    private static final int length=7;
+
 
     public CardDeck() {
         initilalizeCard();
     }
 
+
     public void initilalizeCard(){
-        this.card=new ChanceCards[20];
+        this.card=new ChanceCards[length];
     }
 
     public void setCard(ChanceCards[] card) {
@@ -47,13 +50,14 @@ public class CardDeck {
         card.getCard(5).setType(1); // free red space
           //  card.getCard(5).setMoveTo();
 
-        card.getCard(7).setType(3); // you get 2$
-        card.getCard(7).setTransaction(2);
-        card.getCard(2).setDescription("");
+        card.getCard(6).setType(3); // you get 2$
+        card.getCard(6).setTransaction(2);
+        card.getCard(6).setDescription("");
     }
 
-    public void getRandomCard(){
-
+    public int getRandomCardIndex(){
+      int  index = (int) (Math.random() * length) ;
+        return index;
     }
 
     @Override
