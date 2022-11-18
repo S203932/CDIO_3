@@ -62,6 +62,6 @@ public class CardDeck {
         for (int i=0; i<card.length; i++){
             string=string+card[i].toString()+"\n";
         }
-        return "Chence cards" + string;
+        return "Chance cards" + string;
     }
 }

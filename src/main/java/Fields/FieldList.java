@@ -6,7 +6,7 @@ public class FieldList {
 
     private Field[] fieldList;
 
-    // constructor der indeholdder array
+    // constructor der indeholder array
     public FieldList() {
         InitializeFieldList();
     }
@@ -32,7 +32,7 @@ public class FieldList {
 
         fieldList[3] = new Chance();
         ((Chance)fieldList[0]).setName("CHANCE");
-       ((Chance)fieldList[0]).setColor(Color.LIGHT_GRAY);
+        ((Chance)fieldList[0]).setColor(Color.LIGHT_GRAY);
 
         fieldList[4] = new Property();
         ((Property)fieldList[4]).setName("SLIKBUTIKKEN");
@@ -47,7 +47,9 @@ public class FieldList {
         fieldList[6] = new NeutralField();
         ((NeutralField)fieldList[6]).setName("BESØG I FAENGSEL");
         ((NeutralField)fieldList[6]).setColor(Color.CYAN);
-
-
+        ((Chance)fieldList[3]).setName("Chance");
+    }
+    public Field getFieldIndex(int index){
+        return fieldList[index];
     }
 }
