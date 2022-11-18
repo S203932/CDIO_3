@@ -31,8 +31,8 @@ public class FieldList {
         ((Property)fieldList[2]).setColor(Color.ORANGE);
 
         fieldList[3] = new Chance();
-        ((Chance)fieldList[0]).setName("CHANCE");
-        ((Chance)fieldList[0]).setColor(Color.LIGHT_GRAY);
+        ((Chance)fieldList[3]).setName("CHANCE");
+        ((Chance)fieldList[3]).setColor(Color.LIGHT_GRAY);
 
         fieldList[4] = new Property();
         ((Property)fieldList[4]).setName("SLIKBUTIKKEN");
