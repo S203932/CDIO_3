@@ -4,6 +4,7 @@ import Fields.NeutralField;
 import Fields.Property;
 import Fields.*;
 import SupportClasses.Player;
+import gui_main.GUI;
 
 public class Main {
     public static void main(String[] args) {
@@ -20,13 +21,22 @@ public class Main {
 
         }
 
-    private void initialzePlayers(int amountPlayers) {
+    public Player[] initialzePlayers(int amountPlayers, GUI gui) {
         Player[] players=new Player[amountPlayers];
 
         if (amountPlayers==2){
             for (int i = 0; i < players.length; i++ ){
                 players[i]=new Player();
+                players[i].getAccount().setAccount(20);
+                players[i].setPlayerName(gui.getUserString("Intest navn"));
             }
+        } else if(amountPlayers==3){
+            for (int i = 0; i < players.length; i++ ){
+            players[i]=new Player();
+            players[i].getAccount().setAccount(18);
+            players[i].setPlayerName(gui.getUserString("Intest navn"));
+        }
+
         }
     }
 }

@@ -145,8 +145,11 @@ private     DiceCup dice = new DiceCup(1);
         return numberInput;
     }
 
-    public void showMessage1() {
+    public String showMessage1() {
         gui.showMessage("Indtast spillerens navn");
+        for(int i=0; i<4; i++){
+            String[]
+        }
             String playerOneName = gui.getUserString("playerOne:");
             playerOne.setPlayerName(playerOneName);
             String playerTwoName = gui.getUserString("playerTwo:");
@@ -156,6 +159,7 @@ private     DiceCup dice = new DiceCup(1);
             String playerFourName = gui.getUserString("player3:");
             playerFour.setPlayerName(playerThreeName);
             System.out.println( playerTwo);
+            return pl
 
 
 
