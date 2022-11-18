@@ -21,7 +21,7 @@ public class Main {
         }
 
         FieldList fieldList = new FieldList();
-        fieldList.setupField();
+        //fieldList.setupField();
         System.out.println(fieldList.getFieldIndex(2).getClass());
         System.out.println("Value of property is: "+((Property)fieldList.getFieldIndex(2)).getValue());
 

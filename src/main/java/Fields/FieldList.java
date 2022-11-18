@@ -1,7 +1,9 @@
 package Fields;
 
 import java.awt.*;
+import java.util.ArrayList;
 
+import CreateAndWriteToAndFromTXT.*;
 public class FieldList {
 
     private Field[] fieldList;
@@ -15,9 +17,11 @@ public class FieldList {
         this.fieldList = new Field[24];
     }
 
-    public void setupField(){
+    public void setupField(String filename){
+        ReadFile readFile = new ReadFile();
+        ArrayList<String> stringArrayList = readFile.ReadFile(filename);
         fieldList[0] = new StartField();
-        ((StartField)fieldList[0]).setName("START");
+        ((StartField)fieldList[0]).setName(stringArrayList.get(0));
         ((StartField)fieldList[0]).setColor(Color.LIGHT_GRAY);
 
         fieldList[1] = new Property();
