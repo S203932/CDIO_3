@@ -14,7 +14,7 @@ public class Player {
         setPlayerName("Player one");
         startAccount();
         setPosition(-1);
-        setProperty();
+        instantiateProperty();
     }
 
     public int getPosition() {
@@ -49,14 +49,17 @@ public class Player {
         return property;
     }
 
-    public void setProperty(Property[] property) {
-        this.property = property;
+    public void setProperty(Property property) {
+        int indexValue = 0;
+        while (property[indexValue]!= null){
+            indexValue++;
+        }
+        this.property[indexValue] = property;
+        }
     }
+    public void instantiateProperty(){
+        this.property = new Property[24];
 
-
-
-
-
-
+    }
 
 }
