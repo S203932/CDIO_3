@@ -31,7 +31,23 @@ public class FieldList {
         ((Property)fieldList[2]).setColor(Color.ORANGE);
 
         fieldList[3] = new Chance();
-        ((Chance)fieldList[0]).setName("START");
+        ((Chance)fieldList[0]).setName("CHANCE");
        ((Chance)fieldList[0]).setColor(Color.LIGHT_GRAY);
+
+        fieldList[4] = new Property();
+        ((Property)fieldList[4]).setName("SLIKBUTIKKEN");
+        ((Property)fieldList[4]).setValue(1);
+        ((Property)fieldList[4]).setColor(Color.GRAY);
+
+        fieldList[5] = new Property();
+        ((Property)fieldList[5]).setName("ISKIOSKEN");
+        ((Property)fieldList[5]).setValue(1);
+        ((Property)fieldList[5]).setColor(Color.GRAY);
+
+        fieldList[6] = new NeutralField();
+        ((NeutralField)fieldList[6]).setName("BESØG I FAENGSEL");
+        ((NeutralField)fieldList[6]).setColor(Color.CYAN);
+
+
     }
 }
