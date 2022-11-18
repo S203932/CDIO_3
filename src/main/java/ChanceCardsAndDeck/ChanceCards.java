@@ -88,6 +88,23 @@ public class ChanceCards {
         return this.transaction;
     }
 
+   /* public void cardAction(){
+        switch (card.getType()){
+            case 1:
+                position.setPosition(card.getMoveTo());
+                break;
+
+            case 2:
+                // position.setPosition(card.getMoveTo());
+                break;
+
+            case 3:
+                transaction.transactionAccount(card.getTransaction());
+                break;
+            default: break;
+        }
+    }*/
+
     public String toString(){
         return "This card has the following type: "+this.type+"\nThe following description: "+this.description+
                 "\nThe following MoveTo: "+this.moveTo+"\nThe following MoveUpTo: "+this.moveUpTo+"\n And the " +
