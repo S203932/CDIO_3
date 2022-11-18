@@ -28,24 +28,21 @@ public class Main {
             for (int i = 0; i < players.length; i++ ){
                 players[i]=new Player();
                 players[i].getAccount().setAccount(20);
-                players[i].setPlayerName(gui.getUserString("Intest navn"));
+                players[i].setPlayerName(gui.getUserString("Indtast navn"));
             }
         } else if(amountPlayers==3){
             for (int i = 0; i < players.length; i++ ){
             players[i]=new Player();
             players[i].getAccount().setAccount(18);
-            players[i].setPlayerName(gui.getUserString("Intest navn"));
+            players[i].setPlayerName(gui.getUserString("Indtast navn"));
         }
-
+        } else if(amountPlayers==4){
+            for (int i = 0; i < players.length; i++ ){
+                players[i]=new Player();
+                players[i].getAccount().setAccount(16);
+                players[i].setPlayerName(gui.getUserString("Indtast navn"));
+            }
         }
+        return players;
     }
 }
-    /*
-        private void spilSpillet(int antalSpillere, int maxTure) {
-        // Initialiser spillere.
-        // ---------------------
-        Spiller[] spillere = new Spiller[antalSpillere];
-        for (int i = 0; i < spillere.length; i++) {
-            spillere[i] = new Spiller(15000);
-        }
-     */
