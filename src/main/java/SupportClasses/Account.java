@@ -19,13 +19,13 @@ public class Account {
     }
 
 
-  /*  public Boolean subtractionAccount(int subtractValue) {
+    public void subtractionAccount(int subtractValue) {
         this.pengebeholdning = pengebeholdning - subtractValue;
         if(this.pengebeholdning<0) {
             this.pengebeholdning = 0;
         }
-        return true;
-    }*/
+
+    }
 
 
     public Boolean transactionAccount(int transactionValue) {
