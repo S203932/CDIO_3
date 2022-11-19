@@ -1,27 +1,27 @@
 Felter:
 Start
-Burger Restuarant
-Pizzeria
+Burgerbaren
+Pizzeriaet
 Chance
-Slikbutik
-Isbutik
+Slikbutikken
+Iskiosken
 På besøg
-Museum
+Museet
 Biblioteket
 Chance
-Skaterpark
-Svømmebassin
-Parkeringsplads
+Skaterparken
+Swimmingpoolen
+Parkering
+Spillehallen
 Biografen
 Chance
-Legetøjsfabrikken
-Dyrehandel
+Legetøjsbutikken
+Dyrehandlen
 Gå i fængsel
 Bowlinghallen
-Zoo
+Zoologisk have
 Chance
-Vandland
-The Board Walk
-Prommenade
+Vandlandet
+Strandpromenaden
 
 

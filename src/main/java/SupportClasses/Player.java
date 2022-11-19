@@ -51,15 +51,15 @@ public class Player {
 
     public void setProperty(Property property) {
         int indexValue = 0;
-        while (property[indexValue]!= null){
+        while (this.property[indexValue]!= null){
             indexValue++;
         }
         this.property[indexValue] = property;
-        }
     }
+
     public void instantiateProperty(){
         this.property = new Property[24];
 
     }
-
 }
+

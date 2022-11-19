@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
          GUIController guiController= new GUIController();
          guiController.GUIDice();
-         guiController.GUIController();
+         //guiController.GUIController();
          int amountPlayers = guiController.show();
 
         FieldList fieldList = new FieldList();

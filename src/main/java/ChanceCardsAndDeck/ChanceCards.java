@@ -1,6 +1,14 @@
 package ChanceCardsAndDeck;
 
+import Fields.Field;
+import Fields.FieldList;
+import Fields.Property;
+import SupportClasses.Player;
+import gui_main.GUI;
+import org.example.GUIController;
+
 import java.awt.*;
+
 
 public class ChanceCards {
     private int type;
@@ -88,22 +96,35 @@ public class ChanceCards {
         return this.transaction;
     }
 
-   /* public void cardAction(){
+    public void cardAction(Player player, ChanceCards card, GUI gui, Field[] fieldList ){
         switch (card.getType()){
-            case 1:
-                position.setPosition(card.getMoveTo());
+            case 2:
+                player.setPosition(card.getMoveTo());
                 break;
 
-            case 2:
+            case 1:
+                String chosenButton = gui.getUserButtonPressed(
+                        "Choose what field you want to move to:",
+                        "Burger Place", "Pizza");
+                if(chosenButton.equalsIgnoreCase("Burger Place")){
+                    player.setPosition(1);
+                    Boolean available=((Property)fieldList[1]).getAvailability();
+                    if(available){
+                        ((Property)fieldList[1]).buyProperty(player);
+                    }else{
+
+                    }
+                }
                 // position.setPosition(card.getMoveTo());
                 break;
 
             case 3:
-                transaction.transactionAccount(card.getTransaction());
+                //transaction.transactionAccount(card.getTransaction()); I'll fix this later, can't
+                //remember what it is supposed to do
                 break;
             default: break;
         }
-    }*/
+    }
 
     public String toString(){
         return "This card has the following type: "+this.type+"\nThe following description: "+this.description+

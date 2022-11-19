@@ -35,12 +35,11 @@ public class Account {
 
     }
 
-    public Boolean transactionAccount(int transactionValue) {
+    public void transactionAccount(int transactionValue) {
         this.pengebeholdning = pengebeholdning + transactionValue;
         if(this.pengebeholdning<0) {
             this.pengebeholdning = 0;
         }
-        return true;
     }
 
     public int getPengebeholdning() {
