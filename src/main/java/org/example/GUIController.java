@@ -9,11 +9,6 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class GUIController {
-private     DiceCup dice = new DiceCup(1);
-    Player playerOne = new Player();
-    Player playerTwo = new Player();
-    Player playerThree = new Player();
-    Player playerFour = new Player();
     GUI_Field[] fields = {
             new GUI_Start(), new GUI_Street(), new GUI_Street(), new GUI_Chance(), new GUI_Street(), new GUI_Street(),
 
@@ -24,20 +19,48 @@ private     DiceCup dice = new DiceCup(1);
             new GUI_Jail(), new GUI_Street(), new GUI_Street(), new GUI_Chance(), new GUI_Street(), new GUI_Street(),
     };
     private GUI gui = new GUI(fields);
+    private     DiceCup dice = new DiceCup(1);
+    private GUI_Car car=new GUI_Car();
 
- /*   public void GUIFelt(String title, String SubTitle, int index, Color color ) {
-        gui.getFields()[index].setTitle(title);
-        gui.getFields()[index].setSubText(SubTitle);
-        gui.getFields()[index].setBackGroundColor(Color);
+  /*  public void GUIPlayer(){
+        GUI_Field field = gui.getFields()[dice.result()];
+        GUI_player[0].getCar().setPosition(field);
+        GUI_playerTwo.getCar().setPosition(field);
+        GUI_playerThree.getCar().setPosition(field);
+        GUI_playerFour.getCar().setPosition(field);
+    }*/
+    public Player[] initialzePlayers() {
+        int amountPlayers = gui.getUserInteger("Indtast antal spiller", 2, 4);
+        Player[] player =new Player[amountPlayers];
+        GUI_Player[] GUI_player=new GUI_Player[amountPlayers];
+        if (amountPlayers==2){
+            for (int i = 0; i < player.length; i++ ){
+                player[i]=new Player();
+                player[i].setPlayerName(gui.getUserString("Indtast navn"));
+                player[i].getAccount().setAccount(20);
+                GUI_player[i]=new GUI_Player(player[i].getPlayerName(),20);
+                gui.addPlayer(GUI_player[i]);
+            }
+        } else if(amountPlayers==3){
+            for (int i = 0; i < player.length; i++ ){
+                player[i]=new Player();
+                player[i].setPlayerName(gui.getUserString("Indtast navn"));
+                player[i].getAccount().setAccount(18);
+                GUI_player[i]=new GUI_Player(player[i].getPlayerName(),18);
+                gui.addPlayer(GUI_player[i]);
+            }
+        } else if(amountPlayers==4){
+            for (int i = 0; i < player.length; i++ ){
+                player[i]=new Player();
+                player[i].setPlayerName(gui.getUserString("Indtast navn"));
+                player[i].getAccount().setAccount(16);
+                GUI_player[i]=new GUI_Player(player[i].getPlayerName(),16);
+                gui.addPlayer(GUI_player[i]);
+            }
+        }
+        return player;
     }
-    GUIFelt ("START", "Modtager 2$, når du passerer", 0, new Color(255, 255, 255)){     }
-*/
- public void GUIPlayer(){
-     GUI_Player player = new GUI_Player("KUKU", 2000);
-     gui.addPlayer(player);
-     GUI_Field field = gui.getFields()[dice.result()];
-     player.getCar().setPosition(field);
- }
+
     public void GUIController(String filename) {
         ReadFile readFile = new ReadFile();
         ArrayList<String> stringArrayList = readFile.ReadFile(filename);

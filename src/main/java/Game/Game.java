@@ -11,7 +11,7 @@ public class Game {
 
 
         GUIController guiController= new GUIController();
-        //guiController.GUIDice();
+        guiController.GUIDice();
         String language = guiController.getGui().getUserSelection(
                 "Language",
                 "Dansk", "Engelsk","عربي"
@@ -20,7 +20,9 @@ public class Game {
 
         System.out.println(language);
         guiController.GUIController(language);
-        int amountPlayers = guiController.show();
+        guiController.initialzePlayers();
+
+
 
         FieldList fieldList = new FieldList();
 
