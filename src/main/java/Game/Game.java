@@ -11,7 +11,6 @@ public class Game {
 
 
         GUIController guiController= new GUIController();
-        guiController.GUIDice();
         String language = guiController.getGui().getUserSelection(
                 "Language",
                 "Dansk", "Engelsk","عربي"

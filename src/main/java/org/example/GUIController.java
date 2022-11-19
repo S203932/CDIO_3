@@ -21,16 +21,11 @@ public class GUIController {
     private GUI gui = new GUI(fields);
     private     DiceCup dice = new DiceCup(1);
     private GUI_Car car=new GUI_Car();
+    private Player[] player;
 
-  /*  public void GUIPlayer(){
-        GUI_Field field = gui.getFields()[dice.result()];
-        GUI_player[0].getCar().setPosition(field);
-        GUI_playerTwo.getCar().setPosition(field);
-        GUI_playerThree.getCar().setPosition(field);
-        GUI_playerFour.getCar().setPosition(field);
-    }*/
-    public Player[] initialzePlayers() {
-        int amountPlayers = gui.getUserInteger("Indtast antal spiller", 2, 4);
+
+    public void initialzePlayers() {
+       int amountPlayers = gui.getUserInteger("Indtast antal spiller", 2, 4);
         Player[] player =new Player[amountPlayers];
         GUI_Player[] GUI_player=new GUI_Player[amountPlayers];
         if (amountPlayers==2){
@@ -58,8 +53,21 @@ public class GUIController {
                 gui.addPlayer(GUI_player[i]);
             }
         }
-        return player;
+        int turn=0;
+        for(int i=0; i<amountPlayers; i++){
+            Player playerNow=player[turn];
+            gui.showMessage(playerNow.getPlayerName()+"s  tur");
+            dice.rollDice();
+            int roll=dice.result();
+            gui.setDie(dice.result());
+            playerNow.setPosition((playerNow.getPosition()+roll)% fields.length);
+            GUI_player[turn].getCar().setPosition(gui.getFields()[(playerNow.getPosition()+roll)% fields.length]);
+            turn=((turn+1)%amountPlayers);
+        }
+
     }
+
+
 
     public void GUIController(String filename) {
         ReadFile readFile = new ReadFile();
@@ -159,18 +167,14 @@ public class GUIController {
 
     }
 
-   public void GUIDice(){
-        dice.rollDice();
-        gui.setDie(dice.result());
-   }
 
-    public int show() {
+  /*  public int show() {
         gui.showMessage("Vælger antale af spiller ");
         int numberInput;
         //Indlæser et tal mellem 2 og 4
         numberInput = gui.getUserInteger("Indtast et tal mellem 2 og 4", 2, 4);
         return numberInput;
-    }
+    }*/
 
     public GUI getGui(){
      return this.gui;

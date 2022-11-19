@@ -9,9 +9,9 @@ import gui_main.GUI;
 public class Main {
     public static void main(String[] args) {
          GUIController guiController= new GUIController();
-         guiController.GUIDice();
+        // guiController.GUIDice();
          //guiController.GUIController();
-         int amountPlayers = guiController.show();
+       //  int amountPlayers = guiController.show();
 
         FieldList fieldList = new FieldList();
 
@@ -21,28 +21,5 @@ public class Main {
 
         }
 
-    public Player[] initialzePlayers(int amountPlayers, GUI gui) {
-        Player[] players=new Player[amountPlayers];
 
-        if (amountPlayers==2){
-            for (int i = 0; i < players.length; i++ ){
-                players[i]=new Player();
-                players[i].getAccount().setAccount(20);
-                players[i].setPlayerName(gui.getUserString("Indtast navn"));
-            }
-        } else if(amountPlayers==3){
-            for (int i = 0; i < players.length; i++ ){
-            players[i]=new Player();
-            players[i].getAccount().setAccount(18);
-            players[i].setPlayerName(gui.getUserString("Indtast navn"));
-        }
-        } else if(amountPlayers==4){
-            for (int i = 0; i < players.length; i++ ){
-                players[i]=new Player();
-                players[i].getAccount().setAccount(16);
-                players[i].setPlayerName(gui.getUserString("Indtast navn"));
-            }
-        }
-        return players;
-    }
 }
