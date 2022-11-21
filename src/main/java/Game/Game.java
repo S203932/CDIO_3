@@ -1,6 +1,7 @@
 package Game;
 
 import Fields.FieldList;
+import SupportClasses.Player;
 import org.example.GUIController;
 
 import java.sql.SQLOutput;
@@ -19,11 +20,13 @@ public class Game {
 
         System.out.println(language);
         guiController.GUIController(language);
-        guiController.initialzePlayers();
-
-
-
         FieldList fieldList = new FieldList();
+        Player[] players = guiController.setupPlayers();
+
+
+
+
+
 
 
     }

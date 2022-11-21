@@ -19,11 +19,13 @@ public class GUIController {
             new GUI_Jail(), new GUI_Street(), new GUI_Street(), new GUI_Chance(), new GUI_Street(), new GUI_Street(),
     };
     private GUI gui = new GUI(fields);
-    private     DiceCup dice = new DiceCup(1);
+    private DiceCup dice = new DiceCup(1);
     private GUI_Car car=new GUI_Car();
     private Player[] player;
 
-
+//The following initializePlayers method won't work since it is a void method, so'
+    // the players are only existing in that specific method and are "recreated"
+    // everytime you call that method
     public void initialzePlayers() {
        int amountPlayers = gui.getUserInteger("Indtast antal spiller", 2, 4);
         Player[] player =new Player[amountPlayers];
@@ -56,7 +58,7 @@ public class GUIController {
         int turn=0;
         for(int i=0; i<amountPlayers; i++){
             Player playerNow=player[turn];
-            gui.showMessage(playerNow.getPlayerName()+"s  tur");
+            gui.showMessage(playerNow.getPlayerName()+"'s  tur");
             dice.rollDice();
             int roll=dice.result();
             gui.setDie(dice.result());
@@ -65,6 +67,39 @@ public class GUIController {
             turn=((turn+1)%amountPlayers);
         }
 
+    }
+
+    //much if not most of the method below is from the former initialize players.
+    public Player[] setupPlayers() {
+        int amountPlayers = gui.getUserInteger("Indtast antal spiller", 2, 4);
+        Player[] player = new Player[amountPlayers];
+        GUI_Player[] GUI_player = new GUI_Player[amountPlayers];
+        if (amountPlayers == 2) {
+            for (int i = 0; i < player.length; i++) {
+                player[i] = new Player();
+                player[i].setPlayerName(gui.getUserString("Indtast navn"));
+                player[i].getAccount().setAccount(20);
+                GUI_player[i] = new GUI_Player(player[i].getPlayerName(), 20);
+                gui.addPlayer(GUI_player[i]);
+            }
+        } else if (amountPlayers == 3) {
+            for (int i = 0; i < player.length; i++) {
+                player[i] = new Player();
+                player[i].setPlayerName(gui.getUserString("Indtast navn"));
+                player[i].getAccount().setAccount(18);
+                GUI_player[i] = new GUI_Player(player[i].getPlayerName(), 18);
+                gui.addPlayer(GUI_player[i]);
+            }
+        } else if (amountPlayers == 4) {
+            for (int i = 0; i < player.length; i++) {
+                player[i] = new Player();
+                player[i].setPlayerName(gui.getUserString("Indtast navn"));
+                player[i].getAccount().setAccount(16);
+                GUI_player[i] = new GUI_Player(player[i].getPlayerName(), 16);
+                gui.addPlayer(GUI_player[i]);
+            }
+        }
+        return player;
     }
 
 
