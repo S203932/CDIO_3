@@ -1,5 +1,7 @@
 package org.example;
 import CreateAndWriteToAndFromTXT.ReadFile;
+import Fields.FieldList;
+import Fields.Property;
 import SupportClasses.DiceCup;
 import SupportClasses.Player;
 import gui_fields.*;
@@ -69,12 +71,10 @@ public class GUIController {
 
     }
 
-    //much if not most of the method below is from the former initialize players.
-    public Player[] setupPlayers() {
-        int amountPlayers = gui.getUserInteger("Indtast antal spiller", 2, 4);
-        Player[] player = new Player[amountPlayers];
-        GUI_Player[] GUI_player = new GUI_Player[amountPlayers];
-        if (amountPlayers == 2) {
+    //much of it, if not most, of the method below is from the former initialize players.
+    public GUI_Player[] setupPlayers(Player[] player) {
+        GUI_Player[] GUI_player = new GUI_Player[player.length];
+        if ((player.length) == 2) {
             for (int i = 0; i < player.length; i++) {
                 player[i] = new Player();
                 player[i].setPlayerName(gui.getUserString("Indtast navn"));
@@ -82,7 +82,7 @@ public class GUIController {
                 GUI_player[i] = new GUI_Player(player[i].getPlayerName(), 20);
                 gui.addPlayer(GUI_player[i]);
             }
-        } else if (amountPlayers == 3) {
+        } else if ((player.length) == 3) {
             for (int i = 0; i < player.length; i++) {
                 player[i] = new Player();
                 player[i].setPlayerName(gui.getUserString("Indtast navn"));
@@ -90,7 +90,7 @@ public class GUIController {
                 GUI_player[i] = new GUI_Player(player[i].getPlayerName(), 18);
                 gui.addPlayer(GUI_player[i]);
             }
-        } else if (amountPlayers == 4) {
+        } else if ((player.length) == 4) {
             for (int i = 0; i < player.length; i++) {
                 player[i] = new Player();
                 player[i].setPlayerName(gui.getUserString("Indtast navn"));
@@ -99,7 +99,35 @@ public class GUIController {
                 gui.addPlayer(GUI_player[i]);
             }
         }
-        return player;
+        return GUI_player;
+    }
+
+    public void takeTurn(Player player, GUI gui, GUI_Player gui_player, FieldList fieldList,GUI_Field[] fields){
+        String rollDie = gui.getUserButtonPressed(player.getPlayerName()+"'s turn. Choose an option:",
+                "Press to roll the die.","Press to forefit and give in.");
+        if(rollDie.equalsIgnoreCase("Press to roll the die.")){
+            dice.rollDice();
+            gui.setDie(dice.result());
+            player.diceRollPosition(dice.result());
+            GUI_Field field = gui.getFields()[player.getPosition()];
+            gui_player.getCar().setPosition(field);
+            if(fieldList.getFieldIndex(player.getPosition()).getClass().equals(Property.class)){
+                System.out.println("Field is a property");
+                if(((Property)fieldList.getFieldIndex(player.getPosition())).getAvailability()){
+                    System.out.println("property is not owned");
+                    gui.showMessage("The field is an unowned property, press the button to buy it.");
+                    ((Property)fieldList.getFieldIndex(player.getPosition())).buyProperty(player);
+                    fields[player.getPosition()].setDescription("Is owned by: "+player.getPlayerName());
+
+                }else{
+                    ((Property)fieldList.getFieldIndex(player.getPosition())).PayRentProperty(player);
+                    System.out.println("Property is owned");
+                    gui.showMessage("The property is owned, press the button to pay rent.");
+                }
+            }
+
+        }
+
     }
 
 
@@ -213,6 +241,10 @@ public class GUIController {
 
     public GUI getGui(){
      return this.gui;
+    }
+
+    public GUI_Field[] getGUI_Fields(){
+        return fields;
     }
 
      }

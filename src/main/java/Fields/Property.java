@@ -14,7 +14,7 @@ public class Property extends Field {
 
     public Property() {
         setValue(0);
-        setAvailability(false);
+        setAvailability(true);
         setType(-1);
         setColor(Color.black);
         setPlayer(player);
@@ -60,5 +60,9 @@ public class Property extends Field {
     public void PayRentProperty(Player player){
             player.getAccount().subtractionAccount(this.value);
             this.player.getAccount().additionKonto(this.value);
+    }
+
+    public String toString(){
+        return "Position: "+getPosition();
     }
 }

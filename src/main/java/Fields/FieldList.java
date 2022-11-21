@@ -26,7 +26,6 @@ public class FieldList {
 
         fieldList[1] = new Property();
         ((Property)fieldList[1]).setName(stringArrayList.get(2));
-        ((Property)fieldList[1]).setValue(1);
         ((Property)fieldList[1]).setColor(Color.ORANGE);
 
         fieldList[2] = new Property();
@@ -63,8 +62,8 @@ public class FieldList {
         ((Property)fieldList[8]).setColor(Color.MAGENTA);
 
         fieldList[9] = new Chance();
-        ((NeutralField)fieldList[9]).setName(stringArrayList.get(10));
-        ((NeutralField)fieldList[9]).setColor(Color.LIGHT_GRAY);
+        ((Chance)fieldList[9]).setName(stringArrayList.get(10));
+        ((Chance)fieldList[9]).setColor(Color.LIGHT_GRAY);
 
         fieldList[10] = new Property();
         ((Property)fieldList[10]).setName(stringArrayList.get(11));
@@ -91,8 +90,8 @@ public class FieldList {
         ((Property)fieldList[14]).setColor(Color.RED);
 
         fieldList[15] = new Chance();
-        ((NeutralField)fieldList[15]).setName(stringArrayList.get(16));
-        ((NeutralField)fieldList[15]).setColor(Color.LIGHT_GRAY);
+        ((Chance)fieldList[15]).setName(stringArrayList.get(16));
+        ((Chance)fieldList[15]).setColor(Color.LIGHT_GRAY);
 
         fieldList[16] = new Property();
         ((Property)fieldList[16]).setName(stringArrayList.get(17));
@@ -105,8 +104,8 @@ public class FieldList {
         ((Property)fieldList[17]).setColor(Color.YELLOW);
 
         fieldList[18] = new GoJail();
-        ((NeutralField)fieldList[18]).setName(stringArrayList.get(19));
-        ((NeutralField)fieldList[18]).setColor(Color.DARK_GRAY);
+        ((GoJail)fieldList[18]).setName(stringArrayList.get(19));
+        ((GoJail)fieldList[18]).setColor(Color.DARK_GRAY);
 
         fieldList[19] = new Property();
         ((Property)fieldList[19]).setName(stringArrayList.get(20));
@@ -119,8 +118,8 @@ public class FieldList {
         ((Property)fieldList[20]).setColor(Color.GREEN);
 
         fieldList[21] = new Chance();
-        ((NeutralField)fieldList[21]).setName(stringArrayList.get(22));
-        ((NeutralField)fieldList[21]).setColor(Color.LIGHT_GRAY);
+        ((Chance)fieldList[21]).setName(stringArrayList.get(22));
+        ((Chance)fieldList[21]).setColor(Color.LIGHT_GRAY);
 
         fieldList[22] = new Property();
         ((Property)fieldList[22]).setName(stringArrayList.get(23));
@@ -134,5 +133,9 @@ public class FieldList {
     }
     public Field getFieldIndex(int index){
         return fieldList[index];
+    }
+
+    public Field[] getFieldList(){
+        return this.fieldList;
     }
 }
