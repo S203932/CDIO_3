@@ -11,12 +11,23 @@ public class Player {
     private int position;
     private int jail;
 
+    private int forfeit;
+
     public Player() {
         setPlayerName("Player one");
         startAccount();
         setPosition(-1);
         instantiateProperty();
         setJail(0);
+        setForfeit(0);
+
+    }
+
+    public void setForfeit(int forfeit){
+        this.forfeit = forfeit;
+    }
+    public int getForfeit(){
+        return forfeit;
     }
 
     public void setJail(int jail){

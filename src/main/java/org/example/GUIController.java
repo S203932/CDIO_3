@@ -154,6 +154,11 @@ public class GUIController {
                 gui_player.getCar().setPosition(fields[18]);
             }
 
+        }else{
+            player.setForfeit(1);
+            gui.showMessage("You have now forfeited. Your properties will remain bought, but can " +
+                    "no longer take turns.");
+
         }
 
     }
