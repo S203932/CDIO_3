@@ -28,16 +28,29 @@ public class Game {
         GUI_Player[] gui_players = guiController.setupPlayers(players);
         FieldList fieldList = new FieldList();
         fieldList.setupField(language);
-        guiController.takeTurn(players[0],guiController.getGui(),gui_players[0],fieldList, guiController.getGUI_Fields());
+        while (true){
+            for(int i = 0;i<players.length;i++){
+                guiController.takeTurn(players[i],guiController.getGui(),gui_players[i],fieldList, guiController.getGUI_Fields());
+                System.out.println(players[i].getPlayerName()+"'s properties: "+players[i].getProperty()[i]);
+                System.out.println(players[i].getPlayerName()+"'s position: "+players[i].getPosition());
+                System.out.println(players[i].getPlayerName()+"'s name: "+players[i].getPlayerName());
+                System.out.println(players[i].getPlayerName()+"'s money balance: "+players[i].getAccount().getPengebeholdning());
+                for(int j = 0; j<players.length;j++){
+                    gui_players[j].setBalance(players[j].getAccount().getPengebeholdning());
+                }
 
-        System.out.println(players[0].getProperty()[0]);
-        System.out.println(players[0].getPosition());
-        System.out.println(players[0].getPlayerName());
-        System.out.println(players[0].getAccount().getPengebeholdning());
+                if(players[i].getAccount().getPengebeholdning() == 0){
+                    break;
+                }
+            }
 
-        for(int i=0;gui_players.length>i;i++){
-            gui_players[i].setBalance(players[i].getAccount().getPengebeholdning());
         }
+
+
+
+        //for(int i=0;gui_players.length>i;i++){
+        //    gui_players[i].setBalance(players[i].getAccount().getPengebeholdning());
+        //}
 
 
 

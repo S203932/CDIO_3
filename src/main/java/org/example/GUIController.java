@@ -1,5 +1,8 @@
 package org.example;
+import ChanceCardsAndDeck.CardDeck;
+import ChanceCardsAndDeck.ChanceCards;
 import CreateAndWriteToAndFromTXT.ReadFile;
+import Fields.Chance;
 import Fields.FieldList;
 import Fields.Property;
 import SupportClasses.DiceCup;
@@ -118,12 +121,17 @@ public class GUIController {
                     gui.showMessage("The field is an unowned property, press the button to buy it.");
                     ((Property)fieldList.getFieldIndex(player.getPosition())).buyProperty(player);
                     fields[player.getPosition()].setDescription("Is owned by: "+player.getPlayerName());
+                    gui_player.setBalance(player.getAccount().getPengebeholdning());
 
                 }else{
                     ((Property)fieldList.getFieldIndex(player.getPosition())).PayRentProperty(player);
                     System.out.println("Property is owned");
                     gui.showMessage("The property is owned, press the button to pay rent.");
                 }
+            }else if(fieldList.getFieldIndex(player.getPosition()).getClass().equals(Chance.class)){
+                Chance chance = new Chance();
+                CardDeck cardDeck =chance.getCardDeck();
+                ChanceCards chanceCards = cardDeck.getCard(cardDeck.getRandomCardIndex());
             }
 
         }
