@@ -5,6 +5,7 @@ import Fields.FieldList;
 import Fields.Property;
 import SupportClasses.Player;
 import gui_fields.GUI_Field;
+import gui_fields.GUI_Player;
 import gui_main.GUI;
 import org.example.GUIController;
 
@@ -97,7 +98,7 @@ public class ChanceCards {
         return this.transaction;
     }
 
-    public void cardAction(Player player, GUI gui, Field[] fieldList, GUI_Field[] fields ){
+    public void cardAction(Player player, GUI gui, Field[] fieldList, GUI_Field[] fields, GUI_Player gui_player){
         switch (type){
             case 2:
                 gui.showMessage(description);
@@ -110,6 +111,7 @@ public class ChanceCards {
                         "Burger Place", "Pizza");
                 if(chosenButton.equalsIgnoreCase("Burger Place")){
                     player.setPosition(1);
+                    gui_player.getCar().setPosition(fields[1]);
                     Boolean available=((Property)fieldList[1]).getAvailability();
                     if(available){
                         gui.showMessage("The property is not owned, press the button to buy it.");
@@ -120,6 +122,7 @@ public class ChanceCards {
                     }
                 }else {
                     player.setPosition(2);
+                    gui_player.getCar().setPosition(fields[2]);
                     Boolean available=((Property)fieldList[2]).getAvailability();
                     if(available){
                         gui.showMessage("The property is not owned, press the button to buy it.");
@@ -145,6 +148,7 @@ public class ChanceCards {
                         "Slikbutikken", "Iskiosken");
                 if(chosenButton2.equalsIgnoreCase("Slikbutikken")){
                     player.setPosition(4);
+                    gui_player.getCar().setPosition(fields[4]);
                     Boolean available=((Property)fieldList[4]).getAvailability();
                     if(available){
                         gui.showMessage("The property is not owned, press the button to buy it.");
@@ -155,6 +159,7 @@ public class ChanceCards {
                     }
                 }else {
                     player.setPosition(5);
+                    gui_player.getCar().setPosition(fields[5]);
                     Boolean available=((Property)fieldList[5]).getAvailability();
                     if(available){
                         gui.showMessage("The property is not owned, press the button to buy it.");
@@ -173,6 +178,7 @@ public class ChanceCards {
                         "Spillehallen", "Biografen");
                 if(chosenButton3.equalsIgnoreCase("Spillehallen")){
                     player.setPosition(13);
+                    gui_player.getCar().setPosition(fields[13]);
                     Boolean available=((Property)fieldList[13]).getAvailability();
                     if(available){
                         gui.showMessage("The property is not owned, press the button to buy it.");
@@ -183,6 +189,7 @@ public class ChanceCards {
                     }
                 }else {
                     player.setPosition(14);
+                    gui_player.getCar().setPosition(fields[14]);
                     Boolean available=((Property)fieldList[14]).getAvailability();
                     if(available){
                         gui.showMessage("The property is not owned, press the button to buy it.");

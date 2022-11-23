@@ -32,13 +32,13 @@ public class GUIController {
     // the players are only existing in that specific method and are "recreated"
     // everytime you call that method
     public void initialzePlayers() {
-       int amountPlayers = gui.getUserInteger("Indtast antal spiller", 2, 4);
+       int amountPlayers = gui.getUserInteger("Enter amount of players", 2, 4);
         Player[] player =new Player[amountPlayers];
         GUI_Player[] GUI_player=new GUI_Player[amountPlayers];
         if (amountPlayers==2){
             for (int i = 0; i < player.length; i++ ){
                 player[i]=new Player();
-                player[i].setPlayerName(gui.getUserString("Indtast navn"));
+                player[i].setPlayerName(gui.getUserString("Enter name"));
                 player[i].getAccount().setAccount(20);
                 GUI_player[i]=new GUI_Player(player[i].getPlayerName(),20);
                 gui.addPlayer(GUI_player[i]);
@@ -46,7 +46,7 @@ public class GUIController {
         } else if(amountPlayers==3){
             for (int i = 0; i < player.length; i++ ){
                 player[i]=new Player();
-                player[i].setPlayerName(gui.getUserString("Indtast navn"));
+                player[i].setPlayerName(gui.getUserString("Enter name"));
                 player[i].getAccount().setAccount(18);
                 GUI_player[i]=new GUI_Player(player[i].getPlayerName(),18);
                 gui.addPlayer(GUI_player[i]);
@@ -54,7 +54,7 @@ public class GUIController {
         } else if(amountPlayers==4){
             for (int i = 0; i < player.length; i++ ){
                 player[i]=new Player();
-                player[i].setPlayerName(gui.getUserString("Indtast navn"));
+                player[i].setPlayerName(gui.getUserString("Enter name"));
                 player[i].getAccount().setAccount(16);
                 GUI_player[i]=new GUI_Player(player[i].getPlayerName(),16);
                 gui.addPlayer(GUI_player[i]);
@@ -63,7 +63,7 @@ public class GUIController {
         int turn=0;
         for(int i=0; i<amountPlayers; i++){
             Player playerNow=player[turn];
-            gui.showMessage(playerNow.getPlayerName()+"'s  tur");
+            gui.showMessage(playerNow.getPlayerName()+"'s  turn");
             dice.rollDice();
             int roll=dice.result();
             gui.setDie(dice.result());
@@ -80,7 +80,7 @@ public class GUIController {
         if ((player.length) == 2) {
             for (int i = 0; i < player.length; i++) {
                 player[i] = new Player();
-                player[i].setPlayerName(gui.getUserString("Indtast navn"));
+                player[i].setPlayerName(gui.getUserString("Enter name"));
                 player[i].getAccount().setAccount(20);
                 GUI_player[i] = new GUI_Player(player[i].getPlayerName(), 20);
                 gui.addPlayer(GUI_player[i]);
@@ -88,15 +88,43 @@ public class GUIController {
         } else if ((player.length) == 3) {
             for (int i = 0; i < player.length; i++) {
                 player[i] = new Player();
-                player[i].setPlayerName(gui.getUserString("Indtast navn"));
+                player[i].setPlayerName(gui.getUserString("Enter name"));
                 player[i].getAccount().setAccount(18);
                 GUI_player[i] = new GUI_Player(player[i].getPlayerName(), 18);
                 gui.addPlayer(GUI_player[i]);
             }
         } else if ((player.length) == 4) {
+            String[] nameArray = new String[4];
             for (int i = 0; i < player.length; i++) {
                 player[i] = new Player();
-                player[i].setPlayerName(gui.getUserString("Indtast navn"));
+                String playerName = gui.getUserString("Enter name");
+                nameArray[i] = playerName;
+                player[i].setPlayerName(playerName);
+                for(int j=0; j<i;j++){
+                    int repeat = 0;
+                    if(playerName.equalsIgnoreCase(player[j].getPlayerName())){
+                        repeat = 1;
+                    }
+                    while(repeat == 1){
+                        playerName = gui.getUserString("Enter a name that hasn't been entered");
+                        player[i].setPlayerName(playerName);
+                        int notrepeat = 0;
+                        for(int k = 0; k<i;k++){
+                            System.out.println("k: "+k);
+                            if(!(nameArray[k].equalsIgnoreCase(playerName))){
+                                notrepeat++;
+                                System.out.println("notrepeat: "+notrepeat);
+                                if(notrepeat==(k+1)){
+                                    System.out.println("repeat: "+repeat);
+                                    repeat = 0;
+                                }
+                            }
+                        }
+                    }
+                }
+
+
+
                 player[i].getAccount().setAccount(16);
                 GUI_player[i] = new GUI_Player(player[i].getPlayerName(), 16);
                 gui.addPlayer(GUI_player[i]);
@@ -137,13 +165,14 @@ public class GUIController {
                 cardDeck.setCards();
                 ChanceCards chanceCard = cardDeck.getCard(randomNumber);
                 System.out.println(chanceCard.getDescription());
-                chanceCard.cardAction(player,gui, fieldList.getFieldList(), fields);
+                chanceCard.cardAction(player,gui, fieldList.getFieldList(), fields, gui_player);
             }else if(fieldList.getFieldIndex(player.getPosition()).getClass().equals(NeutralField.class)){
                 gui.showMessage("Nothing worth mentioning happens on this field, press the button " +
                         "to pass the turn.");
             }else if(fieldList.getFieldIndex(player.getPosition()).getClass().equals(StartField.class)){
                 gui.showMessage("You've landed on start, congrats you get 2. Press the button" +
                         "to accept.");
+                gui_player.getCar().setPosition(fields[0]);
             }else if(fieldList.getFieldIndex(player.getPosition()).getClass().equals(GoJail.class)){
                 gui.showMessage("Sucks to be you. Press the button to move to jail.");
                 GoJail goJail = new GoJail();
