@@ -4,11 +4,12 @@ import java.util.Arrays;
 
 public class CardDeck {
     private ChanceCards[] card;
-    private static final int length=7;
+    private int length=7;
 
 
     public CardDeck() {
         initilalizeCard();
+
     }
 
 
@@ -24,35 +25,45 @@ public class CardDeck {
         return card[index];
     }
 
-      public void cards (CardDeck card){
-     /* type 1 - free property
+      public void setCards (){
+     /* type 1 - free property Orange property
         type 2 - move to
         type 3 - transaction
+        type 4 - free property light blue property
+        type 5 - free property red property
        */
-        card.getCard(0).setType(2);// move to Start
-        card.getCard(0).setMoveTo(0);
-        card.getCard(0).setDescription("");
+          this.card=new ChanceCards[length];
+        card[0].setType(2);// move to Start
+        card[0].setMoveTo(0);
+        card[0].setDescription("You for some reason need to move to start, but you get cash" +
+                ".\n Anyway press the button to move.");
 
-        card.getCard(1).setType(1); // free orange space
+
+        card[1].setType(1); // free orange space
         // card.getCard(1).setMoveTo();
 
-        card.getCard(2).setType(3); // pay 2$
-        card.getCard(2).setTransaction(-2);
-        card.getCard(2).setDescription("");
+        card[2].setType(3); // pay 2$
+        card[2].setTransaction(-2);
+        card[2].setDescription("You fell into a deep depression due to the workload of " +
+                "your studies and now you have to pay for a psychologist. Press the button to pay.");
 
-        card.getCard(3).setType(1); // free light blue space
+        card[3].setType(4); // free light blue space
         //  card.getCard(3).setMoveTo();
 
-        card.getCard(4).setType(2); // move to beach
-        card.getCard(4).setMoveTo(23);
-        card.getCard(4).setDescription("");
+        card[4].setType(2); // move to beach
+        card[4].setMoveTo(23);
+        card[4].setDescription("You get the urge to watch some sealions and go to the beach" +
+                "as it is the sea and they are the lions of the sea. Press the button to move.");
 
-        card.getCard(5).setType(1); // free red space
+        card[5].setType(5); // free red space
           //  card.getCard(5).setMoveTo();
 
-        card.getCard(6).setType(3); // you get 2$
-        card.getCard(6).setTransaction(2);
-        card.getCard(6).setDescription("");
+        card[6].setType(3); // you get 2$
+        card[6].setTransaction(2);
+        card[6].setDescription("Your psychologist deemed that they couldn't fix you " +
+                "and gave you a full refund, press the button to receive 2.");
+
+
     }
 
     public int getRandomCardIndex(){

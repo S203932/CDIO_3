@@ -9,12 +9,22 @@ public class Player {
     private Property[] property;
 
     private int position;
+    private int jail;
 
     public Player() {
         setPlayerName("Player one");
         startAccount();
         setPosition(-1);
         instantiateProperty();
+        setJail(0);
+    }
+
+    public void setJail(int jail){
+        this.jail = jail;
+    }
+
+    public int getJail(){
+        return jail;
     }
 
     public int getPosition() {

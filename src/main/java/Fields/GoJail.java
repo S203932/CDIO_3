@@ -40,5 +40,6 @@ public class GoJail extends Field{
     public void GoToJail(Player player){
         player.setPosition(6);
         player.getAccount().subtractionAccount(2);
+
     }
 }

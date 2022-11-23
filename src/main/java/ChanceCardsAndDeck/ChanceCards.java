@@ -4,6 +4,7 @@ import Fields.Field;
 import Fields.FieldList;
 import Fields.Property;
 import SupportClasses.Player;
+import gui_fields.GUI_Field;
 import gui_main.GUI;
 import org.example.GUIController;
 
@@ -96,10 +97,11 @@ public class ChanceCards {
         return this.transaction;
     }
 
-    public void cardAction(Player player, ChanceCards card, GUI gui, Field[] fieldList ){
-        switch (card.getType()){
+    public void cardAction(Player player, GUI gui, Field[] fieldList, GUI_Field[] fields ){
+        switch (type){
             case 2:
-                player.setPosition(card.getMoveTo());
+                gui.showMessage(description);
+                player.setPosition(moveTo);
                 break;
 
             case 1:
@@ -110,17 +112,88 @@ public class ChanceCards {
                     player.setPosition(1);
                     Boolean available=((Property)fieldList[1]).getAvailability();
                     if(available){
+                        gui.showMessage("The property is not owned, press the button to buy it.");
                         ((Property)fieldList[1]).buyProperty(player);
                     }else{
-
+                        gui.showMessage("The property is owned, press the button to pay rent.");
+                        ((Property)fieldList[1]).PayRentProperty(player);
+                    }
+                }else {
+                    player.setPosition(2);
+                    Boolean available=((Property)fieldList[2]).getAvailability();
+                    if(available){
+                        gui.showMessage("The property is not owned, press the button to buy it.");
+                        ((Property)fieldList[2]).buyProperty(player);
+                    }else{
+                        gui.showMessage("The property is owned, press the button to pay rent.");
+                        ((Property)fieldList[2]).PayRentProperty(player);
                     }
                 }
                 // position.setPosition(card.getMoveTo());
                 break;
 
             case 3:
+                gui.showMessage(description);
+                player.getAccount().additionKonto(transaction);
                 //transaction.transactionAccount(card.getTransaction()); I'll fix this later, can't
                 //remember what it is supposed to do
+                break;
+
+            case 4:
+                String chosenButton2 = gui.getUserButtonPressed(
+                        "Choose what field you want to move to:",
+                        "Slikbutikken", "Iskiosken");
+                if(chosenButton2.equalsIgnoreCase("Slikbutikken")){
+                    player.setPosition(4);
+                    Boolean available=((Property)fieldList[4]).getAvailability();
+                    if(available){
+                        gui.showMessage("The property is not owned, press the button to buy it.");
+                        ((Property)fieldList[4]).buyProperty(player);
+                    }else{
+                        gui.showMessage("The property is owned, press the button to pay rent.");
+                        ((Property)fieldList[4]).PayRentProperty(player);
+                    }
+                }else {
+                    player.setPosition(5);
+                    Boolean available=((Property)fieldList[5]).getAvailability();
+                    if(available){
+                        gui.showMessage("The property is not owned, press the button to buy it.");
+                        ((Property)fieldList[5]).buyProperty(player);
+                    }else{
+                        gui.showMessage("The property is owned, press the button to pay rent.");
+                        ((Property)fieldList[5]).PayRentProperty(player);
+                    }
+                }
+                break;
+
+
+            case 5:
+                String chosenButton3 = gui.getUserButtonPressed(
+                        "Choose what field you want to move to:",
+                        "Spillehallen", "Biografen");
+                if(chosenButton3.equalsIgnoreCase("Spillehallen")){
+                    player.setPosition(13);
+                    Boolean available=((Property)fieldList[13]).getAvailability();
+                    if(available){
+                        gui.showMessage("The property is not owned, press the button to buy it.");
+                        ((Property)fieldList[13]).buyProperty(player);
+                    }else{
+                        gui.showMessage("The property is owned, press the button to pay rent.");
+                        ((Property)fieldList[13]).PayRentProperty(player);
+                    }
+                }else {
+                    player.setPosition(14);
+                    Boolean available=((Property)fieldList[14]).getAvailability();
+                    if(available){
+                        gui.showMessage("The property is not owned, press the button to buy it.");
+                        ((Property)fieldList[14]).buyProperty(player);
+                    }else{
+                        gui.showMessage("The property is owned, press the button to pay rent.");
+                        ((Property)fieldList[14]).PayRentProperty(player);
+                    }
+                }
+
+                // position.setPosition(card.getMoveTo());
                 break;
             default: break;
         }

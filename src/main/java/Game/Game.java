@@ -28,7 +28,11 @@ public class Game {
         GUI_Player[] gui_players = guiController.setupPlayers(players);
         FieldList fieldList = new FieldList();
         fieldList.setupField(language);
-        while (true){
+        int end = 0;
+        while (end!=1){
+            for(int j = 0; j<players.length;j++){
+                gui_players[j].setBalance(players[j].getAccount().getPengebeholdning());
+            }
             for(int i = 0;i<players.length;i++){
                 guiController.takeTurn(players[i],guiController.getGui(),gui_players[i],fieldList, guiController.getGUI_Fields());
                 System.out.println(players[i].getPlayerName()+"'s properties: "+players[i].getProperty()[i]);
@@ -39,7 +43,8 @@ public class Game {
                     gui_players[j].setBalance(players[j].getAccount().getPengebeholdning());
                 }
 
-                if(players[i].getAccount().getPengebeholdning() == 0){
+                if(players[i].getAccount().getPengebeholdning() <= 0){
+                    end = 1;
                     break;
                 }
             }

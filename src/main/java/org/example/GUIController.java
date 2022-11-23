@@ -2,16 +2,16 @@ package org.example;
 import ChanceCardsAndDeck.CardDeck;
 import ChanceCardsAndDeck.ChanceCards;
 import CreateAndWriteToAndFromTXT.ReadFile;
-import Fields.Chance;
-import Fields.FieldList;
-import Fields.Property;
+import Fields.*;
 import SupportClasses.DiceCup;
 import SupportClasses.Player;
 import gui_fields.*;
 import gui_main.GUI;
+import java.util.Random;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class GUIController {
     GUI_Field[] fields = {
@@ -129,9 +129,22 @@ public class GUIController {
                     gui.showMessage("The property is owned, press the button to pay rent.");
                 }
             }else if(fieldList.getFieldIndex(player.getPosition()).getClass().equals(Chance.class)){
+                //cardDeck.initilalizeCard();
+                //cardDeck.cards();
                 Chance chance = new Chance();
-                CardDeck cardDeck =chance.getCardDeck();
-                ChanceCards chanceCards = cardDeck.getCard(cardDeck.getRandomCardIndex());
+                CardDeck cardDeck = chance.getCardDeck();
+                int randomNumber = (int)(Math.random() * 7) + 0;
+                ChanceCards chanceCard = cardDeck.getCard(randomNumber);
+                System.out.println(chanceCard.getDescription());
+                chanceCard.cardAction(player,gui, fieldList.getFieldList(), fields);
+            }else if(fieldList.getFieldIndex(player.getPosition()).getClass().equals(NeutralField.class)){
+                gui.showMessage("Nothing worth mentioning happens on this field, press the button " +
+                        "to pass the turn.");
+            }else if(fieldList.getFieldIndex(player.getPosition()).getClass().equals(StartField.class)){
+                gui.showMessage("You've landed on start, congrats you get 2. Press the button" +
+                        "to accept.");
+            }else if(fieldList.getFieldIndex(player.getPosition()).getClass().equals(GoJail.class)){
+                gui.showMessage("Sucks to be you.");
             }
 
         }
