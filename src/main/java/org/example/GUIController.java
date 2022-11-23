@@ -128,16 +128,17 @@ public class GUIController {
                     System.out.println("Property is owned");
                     gui.showMessage("The property is owned, press the button to pay rent.");
                 }
-            /*}else if(fieldList.getFieldIndex(player.getPosition()).getClass().equals(Chance.class)){
+            }else if(fieldList.getFieldIndex(player.getPosition()).getClass().equals(Chance.class)){
                 //cardDeck.initilalizeCard();
                 //cardDeck.cards();
                 Chance chance = new Chance();
                 CardDeck cardDeck = chance.getCardDeck();
                 int randomNumber = (int)(Math.random() * 7) + 0;
+                cardDeck.setCards();
                 ChanceCards chanceCard = cardDeck.getCard(randomNumber);
                 System.out.println(chanceCard.getDescription());
                 chanceCard.cardAction(player,gui, fieldList.getFieldList(), fields);
-            */}else if(fieldList.getFieldIndex(player.getPosition()).getClass().equals(NeutralField.class)){
+            }else if(fieldList.getFieldIndex(player.getPosition()).getClass().equals(NeutralField.class)){
                 gui.showMessage("Nothing worth mentioning happens on this field, press the button " +
                         "to pass the turn.");
             }else if(fieldList.getFieldIndex(player.getPosition()).getClass().equals(StartField.class)){
