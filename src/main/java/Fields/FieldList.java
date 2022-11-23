@@ -26,6 +26,7 @@ public class FieldList {
 
         fieldList[1] = new Property();
         ((Property)fieldList[1]).setName(stringArrayList.get(2));
+        ((Property)fieldList[1]).setValue(1);
         ((Property)fieldList[1]).setColor(Color.ORANGE);
 
         fieldList[2] = new Property();
