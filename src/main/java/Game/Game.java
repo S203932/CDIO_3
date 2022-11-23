@@ -50,6 +50,7 @@ public class Game {
             }
 
         }
+        guiController.getGui().showMessage("Game is over.");
 
 
 

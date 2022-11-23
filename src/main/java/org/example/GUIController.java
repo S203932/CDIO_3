@@ -128,7 +128,7 @@ public class GUIController {
                     System.out.println("Property is owned");
                     gui.showMessage("The property is owned, press the button to pay rent.");
                 }
-            }else if(fieldList.getFieldIndex(player.getPosition()).getClass().equals(Chance.class)){
+            /*}else if(fieldList.getFieldIndex(player.getPosition()).getClass().equals(Chance.class)){
                 //cardDeck.initilalizeCard();
                 //cardDeck.cards();
                 Chance chance = new Chance();
@@ -137,14 +137,20 @@ public class GUIController {
                 ChanceCards chanceCard = cardDeck.getCard(randomNumber);
                 System.out.println(chanceCard.getDescription());
                 chanceCard.cardAction(player,gui, fieldList.getFieldList(), fields);
-            }else if(fieldList.getFieldIndex(player.getPosition()).getClass().equals(NeutralField.class)){
+            */}else if(fieldList.getFieldIndex(player.getPosition()).getClass().equals(NeutralField.class)){
                 gui.showMessage("Nothing worth mentioning happens on this field, press the button " +
                         "to pass the turn.");
             }else if(fieldList.getFieldIndex(player.getPosition()).getClass().equals(StartField.class)){
                 gui.showMessage("You've landed on start, congrats you get 2. Press the button" +
                         "to accept.");
             }else if(fieldList.getFieldIndex(player.getPosition()).getClass().equals(GoJail.class)){
-                gui.showMessage("Sucks to be you.");
+                gui.showMessage("Sucks to be you. Press the button to move to jail.");
+                GoJail goJail = new GoJail();
+                goJail.GoToJail(player);
+                if(player.getJail()==1){
+                    player.getAccount().additionKonto(-1);
+                }
+                gui_player.getCar().setPosition(fields[18]);
             }
 
         }

@@ -34,7 +34,7 @@ public class Player {
     public void diceRollPosition(int diceRoll){
         int oldPosition = this.position;
         int newPosition = oldPosition+diceRoll;
-        if((newPosition)>24){
+        if((newPosition)>=24){
             this.position = newPosition-24;
             this.account.additionKonto(2);
         }else{
