@@ -195,6 +195,7 @@ public class GUIController {
                 if(player.getJail()==1){
                     player.getAccount().additionKonto(-1);
                 }
+                player.setPosition(6);
                 gui_player.getCar().setPosition(fields[6]);
             }
 

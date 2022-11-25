@@ -101,6 +101,7 @@ public class ChanceCards {
             case 2:
                 gui.showMessage(description);
                 player.setPosition(moveTo);
+                gui_player.getCar().setPosition(fields[moveTo]);
                 break;
 
             case 1:
@@ -136,8 +137,6 @@ public class ChanceCards {
             case 3:
                 gui.showMessage(description);
                 player.getAccount().additionKonto(transaction);
-                //transaction.transactionAccount(card.getTransaction()); I'll fix this later, can't
-                //remember what it is supposed to do
                 break;
 
             case 4:
