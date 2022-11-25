@@ -1,13 +1,9 @@
 package Game;
 
 import Fields.FieldList;
-import Fields.Property;
 import SupportClasses.Player;
-import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
-import org.example.GUIController;
-
-import java.sql.SQLOutput;
+import GUIController.GUIController;
 
 public class Game {
     public static void main(String[] args){

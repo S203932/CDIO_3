@@ -1,6 +1,6 @@
 package Fields;
 
-public class NeutralFields {
+public class NeutralFields extends Field{
     private int position;
     private String name;
 

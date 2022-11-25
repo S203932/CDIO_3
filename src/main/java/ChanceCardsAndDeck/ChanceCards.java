@@ -1,13 +1,11 @@
 package ChanceCardsAndDeck;
 
 import Fields.Field;
-import Fields.FieldList;
 import Fields.Property;
 import SupportClasses.Player;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
-import org.example.GUIController;
 
 import java.awt.*;
 

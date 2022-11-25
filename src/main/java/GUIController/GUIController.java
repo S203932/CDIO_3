@@ -1,4 +1,4 @@
-package org.example;
+package GUIController;
 import ChanceCardsAndDeck.CardDeck;
 import ChanceCardsAndDeck.ChanceCards;
 import CreateAndWriteToAndFromTXT.ReadFile;
@@ -180,7 +180,7 @@ public class GUIController {
                 ChanceCards chanceCard = cardDeck.getCard(randomNumber);
                 System.out.println(chanceCard.getDescription());
                 chanceCard.cardAction(player,gui, fieldList.getFieldList(), fields, gui_player);
-            }else if(fieldList.getFieldIndex(player.getPosition()).getClass().equals(NeutralField.class)){
+            }else if(fieldList.getFieldIndex(player.getPosition()).getClass().equals(NeutralFields.class)){
                 gui.showMessage("Nothing worth mentioning happens on this field, press the button " +
                         "to pass the turn.");
             }else if(fieldList.getFieldIndex(player.getPosition()).getClass().equals(StartField.class)){
@@ -194,7 +194,7 @@ public class GUIController {
                 if(player.getJail()==1){
                     player.getAccount().additionKonto(-1);
                 }
-                gui_player.getCar().setPosition(fields[18]);
+                gui_player.getCar().setPosition(fields[6]);
             }
 
         }else{
