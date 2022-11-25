@@ -11,7 +11,6 @@ import java.sql.SQLOutput;
 
 public class Game {
     public static void main(String[] args){
-        //Lets see if we can make this trash pile run
 
 
         GUIController guiController= new GUIController();
