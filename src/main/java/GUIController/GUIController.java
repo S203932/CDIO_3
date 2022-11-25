@@ -1,4 +1,5 @@
 package GUIController;
+// Class is written by Patrick Machalet s203932 and Nataliia Khaiko s224295
 import ChanceCardsAndDeck.CardDeck;
 import ChanceCardsAndDeck.ChanceCards;
 import CreateAndWriteToAndFromTXT.ReadFile;

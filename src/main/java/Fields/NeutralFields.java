@@ -1,5 +1,5 @@
 package Fields;
-
+// Class is written by Nataliia Khaiko s224295 and Patrick Machalet s203932
 public class NeutralFields extends Field{
     private int position;
     private String name;

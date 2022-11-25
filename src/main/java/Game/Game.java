@@ -1,5 +1,5 @@
 package Game;
-
+// Class is written by Patrick Machalet s203932
 import Fields.FieldList;
 import SupportClasses.Player;
 import gui_fields.GUI_Player;

@@ -1,4 +1,5 @@
 package CreateAndWriteToAndFromTXT;
+// Class is written by Patrick Machalet s203932
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.FileReader;

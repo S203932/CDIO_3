@@ -1,5 +1,5 @@
 package Fields;
-
+// Class is written by Daniel Stensen s211449 and Fayyad Mahmoud S224266
 import SupportClasses.Player;
 
 public class GoJail extends Field{

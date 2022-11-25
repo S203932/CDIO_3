@@ -1,5 +1,5 @@
 package Fields;
-
+// Class is written by Daniel Stensen s211449 and Fayyad Mahmoud S224266
 public class StartField extends Field{
    private int position;
      private  String name;

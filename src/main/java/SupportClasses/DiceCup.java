@@ -1,5 +1,5 @@
 package SupportClasses;
-
+// Class is written by Kristian Urban 163301
 public class DiceCup {
     private Die[] dice;
 

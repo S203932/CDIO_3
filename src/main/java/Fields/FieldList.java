@@ -1,5 +1,5 @@
 package Fields;
-
+// Class is written by Kristian Urban 163301, Zainab Hameed s204747 and Patrick Machalet s203932
 import java.awt.*;
 import java.util.ArrayList;
 

@@ -1,4 +1,5 @@
 package Fields;
+// Class is written by Kristian Urban 163301 and Zainab Hameed s204747
 import SupportClasses.Player;
 import java.awt.*;
 

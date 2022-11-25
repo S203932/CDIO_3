@@ -1,5 +1,5 @@
 package SupportClasses;
-
+// Class is written by Patrick Machalet s203932
 public class Account {
     private int pengebeholdning;
 

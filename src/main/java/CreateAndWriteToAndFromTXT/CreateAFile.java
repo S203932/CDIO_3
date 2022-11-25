@@ -1,5 +1,5 @@
 package CreateAndWriteToAndFromTXT;
-
+// Class is written by Patrick Machalet s203932
 import java.io.File;
 import java.io.IOException;
 
