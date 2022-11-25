@@ -78,56 +78,70 @@ public class GUIController {
     public GUI_Player[] setupPlayers(Player[] player) {
         GUI_Player[] GUI_player = new GUI_Player[player.length];
         if ((player.length) == 2) {
+            String[] nameArray = new String[2];
             for (int i = 0; i < player.length; i++) {
+                System.out.println("i : "+i);
                 player[i] = new Player();
-                player[i].setPlayerName(gui.getUserString("Enter name"));
+                String playerName = gui.getUserString("Enter a new name");
+                int repeat = 0;
+                for(int j=0; j<nameArray.length;j++){
+                    if(playerName.equalsIgnoreCase(nameArray[j])){
+                        repeat = 1;
+                        System.out.println("Name has already been entered.");
+                    }
+                }
+                nameArray[i] = playerName;
+                player[i].setPlayerName(playerName);
                 player[i].getAccount().setAccount(20);
                 GUI_player[i] = new GUI_Player(player[i].getPlayerName(), 20);
                 gui.addPlayer(GUI_player[i]);
+                if(repeat == 1) {
+                    i = i - 1;
+                }
             }
         } else if ((player.length) == 3) {
+            String[] nameArray = new String[3];
             for (int i = 0; i < player.length; i++) {
+                System.out.println("i : "+i);
                 player[i] = new Player();
-                player[i].setPlayerName(gui.getUserString("Enter name"));
+                String playerName = gui.getUserString("Enter a new name");
+                int repeat = 0;
+                for(int j=0; j<nameArray.length;j++){
+                    if(playerName.equalsIgnoreCase(nameArray[j])){
+                        repeat = 1;
+                        System.out.println("Name has already been entered.");
+                    }
+                }
+                nameArray[i] = playerName;
+                player[i].setPlayerName(playerName);
                 player[i].getAccount().setAccount(18);
                 GUI_player[i] = new GUI_Player(player[i].getPlayerName(), 18);
                 gui.addPlayer(GUI_player[i]);
+                if(repeat == 1) {
+                    i = i - 1;
+                }
             }
         } else if ((player.length) == 4) {
             String[] nameArray = new String[4];
             for (int i = 0; i < player.length; i++) {
+                System.out.println("i : "+i);
                 player[i] = new Player();
-                String playerName = gui.getUserString("Enter name");
-                nameArray[i] = playerName;
-                player[i].setPlayerName(playerName);
-                for(int j=0; j<i;j++){
-                    int repeat = 0;
-                    if(playerName.equalsIgnoreCase(player[j].getPlayerName())){
+                String playerName = gui.getUserString("Enter a new name");
+                int repeat = 0;
+                for(int j=0; j<nameArray.length;j++){
+                    if(playerName.equalsIgnoreCase(nameArray[j])){
                         repeat = 1;
-                    }
-                    while(repeat == 1){
-                        playerName = gui.getUserString("Enter a name that hasn't been entered");
-                        player[i].setPlayerName(playerName);
-                        int notrepeat = 0;
-                        for(int k = 0; k<i;k++){
-                            System.out.println("k: "+k);
-                            if(!(nameArray[k].equalsIgnoreCase(playerName))){
-                                notrepeat++;
-                                System.out.println("notrepeat: "+notrepeat);
-                                if(notrepeat==(k+1)){
-                                    System.out.println("repeat: "+repeat);
-                                    repeat = 0;
-                                }
-                            }
-                        }
+                        System.out.println("Name has already been entered.");
                     }
                 }
-
-
-
+                nameArray[i] = playerName;
+                player[i].setPlayerName(playerName);
                 player[i].getAccount().setAccount(16);
                 GUI_player[i] = new GUI_Player(player[i].getPlayerName(), 16);
                 gui.addPlayer(GUI_player[i]);
+                if(repeat == 1){
+                    i = i -1;
+                }
             }
         }
         return GUI_player;

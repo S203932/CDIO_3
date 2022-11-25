@@ -17,13 +17,13 @@ public class Game {
         GUIController guiController= new GUIController();
         String language = guiController.getGui().getUserSelection(
                 "Language",
-                "Dansk", "Engelsk","عربي"
+                "Dansk", "English","عربي"
         );
         language=language+".txt";
 
         System.out.println(language);
         guiController.GUIController(language);
-        int amountPlayers = guiController.getGui().getUserInteger("Indtast antal spiller", 2, 4);
+        int amountPlayers = guiController.getGui().getUserInteger("Insert amount of players", 2, 4);
         Player[] players = new Player[amountPlayers];
         GUI_Player[] gui_players = guiController.setupPlayers(players);
         FieldList fieldList = new FieldList();
